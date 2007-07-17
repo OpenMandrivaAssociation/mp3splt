@@ -6,7 +6,9 @@ Name: %{name}
 Summary: Command line utility to split mp3 and ogg files
 Version: %{version}
 Release: %{release}
-Source: http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}-src.tar.gz
+Source0: http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}-src.tar.gz
+# From Debian, fixes build with GCC 4 - AdamW 2007/07
+Patch0: mp3splt-2.1c-gcc4.patch
 Group: Sound
 URL: http://mp3splt.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -29,6 +31,7 @@ extract tracks just in few seconds.
 %prep
 rm -rf $RPM_BUILD_ROOT
 %setup -q
+%patch0 -p1 -b .gcc4
 %build
 
 %configure2_5x
