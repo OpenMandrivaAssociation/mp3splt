@@ -11,6 +11,7 @@ Source0: http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}-src.tar.g
 Patch0: mp3splt-2.1c-gcc4.patch
 Group: Sound
 URL: http://mp3splt.sourceforge.net/
+BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: oggvorbis-devel mad-devel autoconf
 License: GPL
 
