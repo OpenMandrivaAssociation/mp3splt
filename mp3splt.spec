@@ -1,19 +1,19 @@
-%define name mp3splt
-%define version 2.1c
-%define release %mkrel 4
+%define	name	mp3splt
+%define	version	2.2.8
+%define	release	%mkrel 1
 
-Name: %{name}
-Summary: Command line utility to split mp3 and ogg files
-Version: %{version}
-Release: %{release}
-Source0: http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}-src.tar.gz
-# From Debian, fixes build with GCC 4 - AdamW 2007/07
-Patch0: mp3splt-2.1c-gcc4.patch
-Group: Sound
-URL: http://mp3splt.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-buildroot
-BuildRequires: oggvorbis-devel mad-devel autoconf
-License: GPL
+Name:		%{name}
+Summary:	Command line utility to split mp3 and ogg files
+Version:	%{version}
+Release:	%{release}
+Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Group:		Sound
+URL:		http://mp3splt.sourceforge.net/
+BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildRequires:	oggvorbis-devel
+BuildRequires:	mad-devel
+BuildRequires:	libmp3splt-devel
+License:	GPLv2+
 
 %description
 Mp3Splt is a command line utility to split MP3 (VBR supported) and Ogg Vorbis
@@ -29,22 +29,26 @@ Otherwise if you have a file created either with Mp3Wrap or AlbumWrap you can
 extract tracks just in few seconds.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
 %setup -q
-%patch0 -p1 -b .gcc4
-%build
 
-%configure2_5x
+%build
+%configure2_5x \
+	--enable-oggsplt_symlink \
+	--disable-rpath
 %make
 
 %install
-%makeinstall
+rm -rf %{buildroot}
+%makeinstall_std
+
+%find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT 
+rm -rf %{buildroot}
 
-%files 
+%files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog INSTALL README
+%doc AUTHORS ChangeLog README
 %{_bindir}/*
-%{_mandir}/man1/mp3splt.1*
+%{_mandir}/man1/mp3splt.*
+%{_mandir}/man1/oggsplt.*
