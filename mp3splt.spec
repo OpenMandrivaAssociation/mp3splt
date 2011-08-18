@@ -1,5 +1,5 @@
 %define	name	mp3splt
-%define	version	2.3a
+%define	version	2.4
 %define	release	%mkrel 1
 
 Name:		%{name}
