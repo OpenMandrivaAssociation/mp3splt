@@ -1,6 +1,6 @@
 %define	name	mp3splt
 %define	version	2.4.1
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Summary:	Command line utility to split mp3 and ogg files
