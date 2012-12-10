@@ -52,3 +52,74 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_mandir}/man1/mp3splt.*
 %{_mandir}/man1/oggsplt.*
+
+
+%changelog
+* Sat Feb 11 2012 Oden Eriksson <oeriksson@mandriva.com> 2.4.1-2mdv2012.0
++ Revision: 773004
+- relink against libpcre.so.1
+
+* Thu Nov 24 2011 Andrey Bondrov <abondrov@mandriva.org> 2.4.1-1
++ Revision: 733211
+- New version 2.4.1
+
+* Thu Aug 18 2011 Andrey Bondrov <abondrov@mandriva.org> 2.4-1
++ Revision: 695193
+- New version 2.4
+
+* Sun Mar 06 2011 Jani Välimaa <wally@mandriva.org> 2.3a-1
++ Revision: 642247
+- new version 2.3a
+
+* Fri Mar 04 2011 Jani Välimaa <wally@mandriva.org> 2.3-1
++ Revision: 641582
+- new version 2.3
+
+* Fri Oct 01 2010 Jani Välimaa <wally@mandriva.org> 2.2.9-1mdv2011.0
++ Revision: 582293
+- new version 2.2.9
+
+* Fri Aug 27 2010 Jani Välimaa <wally@mandriva.org> 2.2.8-1mdv2011.0
++ Revision: 573593
+- new version 2.2.8
+- drop unneeded patch
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 2.1c-3mdv2009.0
++ Revision: 252945
+- rebuild
+
+* Fri Dec 21 2007 Olivier Blin <blino@mandriva.org> 2.1c-1mdv2008.1
++ Revision: 136608
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Jul 17 2007 Adam Williamson <awilliamson@mandriva.org> 2.1c-1mdv2008.0
++ Revision: 52981
+- add patch0 (fix build with GCC 4)
+- spec clean
+- new release 2.1c
+- Import mp3splt
+
+
+* Thu Nov  4 2004 Pascal Terjan <pterjan@mandrake.org> 2.1-1mdk
+- New release 2.1
+
+* Tue Apr 04 2004 Pascal Terjan <pterjan@mandrake.org> 2.0e-1mdk
+- 2.0e
+
+* Thu Mar 11 2004 Pascal Terjan <pterjan@mandrake.org> 2.0d-1mdk
+- 2.0d
+
+* Fri Jan 10 2004 Pascal Terjan <pterjan@mandrake.org> 2.0-1mdk
+- 2.0
+
+* Thu Nov 13 2003 Pascal Terjan <CMoi@tuxfamily.org> 1.9-2mdk
+- fix typo in summary
+
+* Thu Nov 06 2003 Pascal Terjan <CMoi@tuxfamily.org> 1.9-1mdk
+- new in contribs
