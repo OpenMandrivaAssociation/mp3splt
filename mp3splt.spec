@@ -5,7 +5,7 @@
 Name:		%{name}
 Summary:	Command line utility to split mp3 and ogg files
 Version:	%{version}
-Release:	%{release}
+Release:	%{release}1
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Group:		Sound
 URL:		http://mp3splt.sourceforge.net/
