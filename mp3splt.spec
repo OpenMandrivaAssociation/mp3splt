@@ -1,15 +1,10 @@
-%define	name	mp3splt
-%define	version	2.6.2
-%define release	1
-
-Name:		%{name}
+Name:		mp3splt
 Summary:	Command line utility to split mp3 and ogg files
-Version:	%{version}
-Release:	%{release}1
+Version:	2.6.2
+Release:	1
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Group:		Sound
 URL:		http://mp3splt.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	mad-devel
@@ -30,18 +25,17 @@ Otherwise if you have a file created either with Mp3Wrap or AlbumWrap you can
 extract tracks just in few seconds.
 
 %prep
-%setup -q
-
-%build
-%configure2_5x \
+%autosetup -p1
+%configure \
 	--enable-oggsplt_symlink \
 	--enable-flacsplt_symlink \
 	--disable-rpath
-%make
+
+%build
+%make_build
 
 %install
-rm -rf %{buildroot}
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
 
@@ -51,4 +45,3 @@ rm -rf %{buildroot}
 %{_mandir}/man1/mp3splt.*
 %{_mandir}/man1/oggsplt.*
 %{_mandir}/man1/flacsplt.*
-
