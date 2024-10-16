@@ -4,7 +4,7 @@ Version:	2.6.2
 Release:	1
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Group:		Sound
-URL:		http://mp3splt.sourceforge.net/
+URL:		https://mp3splt.sourceforge.net/
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:	mad-devel
